@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-4"  *ngFor="let dt of data.api_data">
+        <div class="card">
+            <img class="card-img-top" src="{{ data.image }}{{dt.poster_path }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ dt.title }}</h5>
+                <p class="card-text">popularity : {{ dt.popularity }}</p>    
+                <p class="card-text">release date : {{ dt.release_date }}</p>
+                <a href="#" routerLink="/detail" class="card-btn">Find out more ></a>
+            </div>
+        </div>
+    </div>
+</div>

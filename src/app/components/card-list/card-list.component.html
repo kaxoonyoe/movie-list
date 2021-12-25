@@ -1,0 +1,48 @@
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="content">
+                <h5 class="text-white">EXHIBITORS /</h5>
+                <div class="card-content p-5">
+                    <div class="row">
+                        <div class="col-12 col-xl-12 col-lg-12 col-md-12">
+                            <div class="row">
+                                <div class="col-12 col-lg-4 offset-lg-4">
+                                    
+                                    <div class="category">
+                                        <div class="form-label">
+                                            View by Genre
+                                        </div>
+                                        <div></div>
+                                        <select class="form-select form-select-sm" (change)="changeSelected($event)">
+                                            <option *ngFor="let genre of genreData" value = {{genre.id}} >{{ genre.name }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4"  *ngFor="let movie of filterMovieList">
+                                    <div class="card">
+                                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ movie.title }}</h5>
+                                            <p class="card-text">popularity : {{ movie.popularity }}</p>    
+                                            <p class="card-text">release date : {{ movie.release_date }}</p>
+                                            <a href="#" routerLink="/detail/{{movie.id}}" class="card-btn">Find out more ></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
