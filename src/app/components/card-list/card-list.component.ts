@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { CardListService } from './card-list.service';
+import { MovieListService } from './movieList.service';
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
@@ -9,10 +9,12 @@ import { CardListService } from './card-list.service';
 export class CardListComponent implements OnInit {
   public data:any = [];
 
-  constructor(private api:CardListService){
+  constructor(private api:MovieListService){
 
   }
-
+  /**
+ * Get movie list and genre from moviedb api
+ */
   // constructor(private http: HttpClient) { 
   //   const url ='https://api.themoviedb.org/3/genre/movie/list?api_key=ff76cec2f9b39d952b64c9d65d6732fa&language=en-US';
   //   this.http.get(url).subscribe((res:any)=>{
